@@ -1,10 +1,10 @@
 <div align="center">
 
 <!-- Animated SVG Hero Banner -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:58a6ff,100:f778ba&height=220&section=header&text=context-compressor&fontSize=52&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Cut%20your%20LLM%20costs%20by%2050%25%20in%201%20line%20of%20code&descAlignY=55&descSize=18&descColor=c9d1d9" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:58a6ff,100:f778ba&height=220&section=header&text=llmslim&fontSize=52&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Cut%20your%20LLM%20costs%20by%2050%25%20in%201%20line%20of%20code&descAlignY=55&descSize=18&descColor=c9d1d9" width="100%"/>
 
 <!-- Animated Typing Effect -->
-<a href="https://github.com/Thanatos9404/context-compressor">
+<a href="https://github.com/Thanatos9404/llmslim">
   <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=24&duration=3000&pause=1000&color=58A6FF&center=true&vCenter=true&multiline=true&repeat=true&width=700&height=80&lines=%F0%9F%94%A5+Semantic+Compression+for+LLM+Prompts;%E2%9A%A1+40-70%25+Token+Reduction+%7C+Zero+Meaning+Loss;%F0%9F%92%B0+Save+Thousands+on+API+Costs+Instantly" alt="Typing SVG" />
 </a>
 
@@ -12,16 +12,16 @@
 
 <!-- Animated Flow Diagram -->
 <p align="center">
-  <img src="assets/compression-flow.svg" width="95%" alt="Context Compressor Pipeline Live Animation" />
+  <img src="assets/compression-flow.svg" width="95%" alt="LLMSlim Pipeline Live Animation" />
 </p>
 
 <br/>
 
 <!-- Badges Row 1: Status -->
-[![PyPI version](https://img.shields.io/pypi/v/context-compressor?style=for-the-badge&logo=pypi&logoColor=white&color=58a6ff)](https://pypi.org/project/context-compressor/)
+[![PyPI version](https://img.shields.io/pypi/v/llmslim?style=for-the-badge&logo=pypi&logoColor=white&color=58a6ff)](https://pypi.org/project/llmslim/)
 [![Python](https://img.shields.io/badge/python-3.8+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-f778ba?style=for-the-badge&logo=open-source-initiative&logoColor=white)](LICENSE)
-[![Stars](https://img.shields.io/github/stars/Thanatos9404/context-compressor?style=for-the-badge&logo=github&color=ffa657)](https://github.com/Thanatos9404/context-compressor/stargazers)
+[![Stars](https://img.shields.io/github/stars/Thanatos9404/llmslim?style=for-the-badge&logo=github&color=ffa657)](https://github.com/Thanatos9404/llmslim/stargazers)
 
 <!-- Badges Row 2: Tech -->
 [![Semantic](https://img.shields.io/badge/embeddings-sentence--transformers-7c3aed?style=for-the-badge&logo=huggingface&logoColor=white)](https://www.sbert.net/)
@@ -34,7 +34,7 @@
 
 <!-- Hero Code Block -->
 ```python
-from context_compressor import compress
+from llmslim import compress
 
 result = compress(your_massive_prompt, target_ratio=0.5)
 # That's it. 50% fewer tokens. Same meaning. Half the cost. 🚀
@@ -105,7 +105,7 @@ errors gracefully, explain reasoning step by step.
 
 ---
 
-## 🎯 Why context-compressor?
+## 🎯 Why llmslim?
 
 <table>
 <tr>
@@ -125,7 +125,7 @@ Every token you send to an LLM costs money. Long prompts, RAG contexts, and chat
 
 ### 🎉 The Solution
 
-**context-compressor** uses semantic understanding to surgically remove redundancy while keeping every instruction, entity, and key detail intact.
+**llmslim** uses semantic understanding to surgically remove redundancy while keeping every instruction, entity, and key detail intact.
 
 - ⚡ **One function call** — `compress(text)`
 - 🧠 **Semantic chunking** — understands topics
@@ -145,19 +145,19 @@ Every token you send to an LLM costs money. Long prompts, RAG contexts, and chat
 
 ```bash
 # Core (works offline, no model downloads needed)
-pip install context-compressor
+pip install llmslim
 
 # With high-quality semantic embeddings (recommended)
-pip install "context-compressor[semantic]"
+pip install "llmslim[semantic]"
 
 # Everything (semantic + fast token counting + NLTK sentence splitting)
-pip install "context-compressor[all]"
+pip install "llmslim[all]"
 ```
 
 ### One Line Is All You Need
 
 ```python
-from context_compressor import compress
+from llmslim import compress
 
 result = compress(your_prompt, target_ratio=0.5)
 
@@ -170,7 +170,7 @@ print(result.summary())            # → full stats breakdown
 ### Use Directly With Any LLM
 
 ```python
-from context_compressor import compress
+from llmslim import compress
 from openai import OpenAI
 
 client = OpenAI()
@@ -278,14 +278,14 @@ graph LR
 
 </div>
 
-> **context-compressor is model-agnostic.** It compresses the text *before* it reaches any model. Works with any API, any framework, any model.
+> **llmslim is model-agnostic.** It compresses the text *before* it reaches any model. Works with any API, any framework, any model.
 
 ---
 
 ## 💬 Compress Chat Histories
 
 ```python
-from context_compressor import compress_chat_messages
+from llmslim import compress_chat_messages
 
 conversation = [
     {"role": "system", "content": "You are a helpful coding assistant..."},
@@ -306,7 +306,7 @@ response = client.chat.completions.create(model="gpt-5", messages=compressed)
 ## 📚 RAG Pipeline Compression
 
 ```python
-from context_compressor import compress_documents
+from llmslim import compress_documents
 
 # Your retrieved chunks from a vector DB
 retrieved_chunks = [chunk1, chunk2, chunk3, chunk4, chunk5]
@@ -330,7 +330,7 @@ print(f"Saved {total_saved} tokens across {len(results)} documents")
 ## 💰 Cost Savings Calculator
 
 ```python
-from context_compressor import compress, estimate_cost_savings
+from llmslim import compress, estimate_cost_savings
 
 result = compress(prompt, target_ratio=0.5)
 
@@ -396,8 +396,8 @@ Compression quality across different text types at various target ratios:
 
 ```bash
 # Clone and install
-git clone https://github.com/Thanatos9404/context-compressor.git
-cd context-compressor
+git clone https://github.com/Thanatos9404/llmslim.git
+cd llmslim
 pip install -e ".[all,dev]"
 
 # Run the benchmark suite
@@ -411,7 +411,7 @@ python benchmarks/benchmark.py
 ## 🛠️ Advanced Configuration
 
 ```python
-from context_compressor import ContextCompressor
+from llmslim import ContextCompressor
 
 compressor = ContextCompressor(
     # Chunking parameters
@@ -448,19 +448,19 @@ result = compressor.compress(text, target_ratio=0.5, query="optional query")
 
 ```bash
 # Basic compression
-context-compressor input.txt -r 0.5 -o compressed.txt
+llmslim input.txt -r 0.5 -o compressed.txt
 
 # With stats
-context-compressor input.txt --ratio 0.5 --stats
+llmslim input.txt --ratio 0.5 --stats
 
 # With cost estimate
-context-compressor input.txt -r 0.5 --cost gpt-5 --requests-per-day 10000
+llmslim input.txt -r 0.5 --cost gpt-5 --requests-per-day 10000
 
 # From stdin
-cat prompt.txt | context-compressor --ratio 0.4
+cat prompt.txt | llmslim --ratio 0.4
 
 # Pipe to clipboard (macOS)
-context-compressor input.txt -r 0.5 | pbcopy
+llmslim input.txt -r 0.5 | pbcopy
 ```
 
 ---
@@ -533,7 +533,7 @@ Calculate dollar savings from compression at your request volume.
 ## 🏗️ Architecture
 
 ```
-context_compressor/
+llmslim/
 ├── __init__.py          # Public API exports
 ├── core.py              # ContextCompressor class + compress() function
 ├── chunking.py          # Semantic chunking with topic-drift detection
@@ -554,8 +554,8 @@ Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines
 
 ```bash
 # Development setup
-git clone https://github.com/Thanatos9404/context-compressor.git
-cd context-compressor
+git clone https://github.com/Thanatos9404/llmslim.git
+cd llmslim
 pip install -e ".[all,dev]"
 pytest tests/ -v
 ```
@@ -574,13 +574,13 @@ MIT License — see [LICENSE](LICENSE) for details.
 
 If this project saved you money, star it! ⭐
 
-[![Star History Chart](https://api.star-history.com/svg?repos=Thanatos9404/context-compressor&type=Date)](https://star-history.com/#Thanatos9404/context-compressor&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=Thanatos9404/llmslim&type=Date)](https://star-history.com/#Thanatos9404/llmslim&Date)
 
 <br/>
 
 ### Built with ❤️ by [Yashvardhan Thanvi](https://github.com/Thanatos9404)
 
-<a href="https://github.com/Thanatos9404/context-compressor">
+<a href="https://github.com/Thanatos9404/llmslim">
   <img src="https://img.shields.io/badge/⭐_Star_this_repo-it_helps!-ffa657?style=for-the-badge&logo=github" />
 </a>
 

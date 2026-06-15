@@ -1,6 +1,6 @@
 """High-level pipelines for common real-world use cases.
 
-These helpers wrap :func:`context_compressor.core.compress` for the two
+These helpers wrap :func:`llmslim.core.compress` for the two
 most common scenarios: compressing chat-style message histories before
 sending them to a model, and compressing retrieved documents in a RAG
 pipeline.
@@ -40,14 +40,14 @@ def compress_chat_messages(
         min_tokens: Messages below this token count are left untouched
             (compression overhead isn't worth it for short turns).
         **kwargs: Extra keyword arguments forwarded to
-            :func:`context_compressor.core.compress`.
+            :func:`llmslim.core.compress`.
 
     Returns:
         A new list of message dicts with ``content`` replaced by
         compressed text where applicable. The input list is not mutated.
 
     Example:
-        >>> from context_compressor import compress_chat_messages
+        >>> from llmslim import compress_chat_messages
         >>> compressed = compress_chat_messages(conversation_history, target_ratio=0.5)
         >>> response = openai_client.chat.completions.create(model="gpt-5", messages=compressed)
     """
@@ -89,14 +89,14 @@ def compress_documents(
             ranking.
         target_ratio: Fraction of tokens to retain per document.
         **kwargs: Extra keyword arguments forwarded to
-            :func:`context_compressor.core.compress`.
+            :func:`llmslim.core.compress`.
 
     Returns:
         A list of :class:`CompressionResult`, one per input document, in
         the same order.
 
     Example:
-        >>> from context_compressor import compress_documents
+        >>> from llmslim import compress_documents
         >>> results = compress_documents(retrieved_chunks, query=user_query, target_ratio=0.4)
         >>> context = "\\n\\n".join(r.compressed_text for r in results)
         >>> total_saved = sum(r.tokens_saved for r in results)

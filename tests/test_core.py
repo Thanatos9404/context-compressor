@@ -1,4 +1,4 @@
-"""Comprehensive test suite for context-compressor.
+"""Comprehensive test suite for llmslim.
 
 Tests cover the public API surface, core algorithm correctness, edge
 cases, and all pipeline helpers.  The suite is designed to run with only
@@ -14,7 +14,7 @@ from typing import Dict, List
 import numpy as np
 import pytest
 
-from context_compressor import (
+from llmslim import (
     CompressionResult,
     ContextCompressor,
     CostEstimate,
@@ -27,18 +27,18 @@ from context_compressor import (
     estimate_cost_savings,
     list_supported_models,
 )
-from context_compressor.chunking import Chunk, semantic_chunk
-from context_compressor.embeddings import (
+from llmslim.chunking import Chunk, semantic_chunk
+from llmslim.embeddings import (
     EmbeddingBackend,
     TfidfEmbeddingBackend,
     get_default_backend,
     reset_default_backend,
 )
-from context_compressor.ranking import (
+from llmslim.ranking import (
     DEFAULT_WEIGHTS,
     score_chunk_sentences,
 )
-from context_compressor.tokenization import split_paragraphs, split_sentences
+from llmslim.tokenization import split_paragraphs, split_sentences
 
 
 # ---------------------------------------------------------------------------

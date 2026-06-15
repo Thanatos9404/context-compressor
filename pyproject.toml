@@ -3,7 +3,7 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "context-compressor"
+name = "llmslim"
 version = "0.1.0"
 description = "Cut your LLM prompt size by 40-70% in one line of code -- semantic chunking + extractive summarization that preserves meaning, instructions, and key entities."
 readme = "README.md"
@@ -51,15 +51,15 @@ all = ["sentence-transformers>=2.2", "tiktoken>=0.5", "nltk>=3.8"]
 dev = ["pytest>=7.0", "pytest-cov"]
 
 [project.urls]
-Homepage = "https://github.com/Thanatos9404/context-compressor"
-Repository = "https://github.com/Thanatos9404/context-compressor"
-"Bug Tracker" = "https://github.com/Thanatos9404/context-compressor/issues"
+Homepage = "https://github.com/Thanatos9404/llmslim"
+Repository = "https://github.com/Thanatos9404/llmslim"
+"Bug Tracker" = "https://github.com/Thanatos9404/llmslim/issues"
 
 [project.scripts]
-context-compressor = "context_compressor.cli:main"
+llmslim = "llmslim.cli:main"
 
 [tool.setuptools.packages.find]
-include = ["context_compressor*"]
+include = ["llmslim*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

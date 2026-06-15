@@ -2,15 +2,15 @@
 """Example: Compressing long documents (research papers, legal docs, reports).
 
 When you need to feed a long document into an LLM for summarization,
-Q&A, or analysis, context-compressor can cut it down to fit within
+Q&A, or analysis, llmslim can cut it down to fit within
 context windows while preserving the key facts, entities, and structure.
 
 Usage:
-    pip install "context-compressor[all]"
+    pip install "llmslim[all]"
     python examples/long_document_example.py
 """
 
-from context_compressor import compress, estimate_cost_savings
+from llmslim import compress, estimate_cost_savings
 
 
 # A realistic long document (~2,500 tokens) simulating a technical report

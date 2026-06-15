@@ -1,8 +1,8 @@
-"""Command-line interface for context-compressor.
+"""Command-line interface for llmslim.
 
 Usage:
-    context-compressor input.txt -r 0.5 -o compressed.txt --stats
-    cat prompt.txt | context-compressor --ratio 0.4 --cost gpt-5
+    llmslim input.txt -r 0.5 -o compressed.txt --stats
+    cat prompt.txt | llmslim --ratio 0.4 --cost gpt-5
 """
 
 from __future__ import annotations
@@ -16,7 +16,7 @@ from .cost import estimate_cost_savings, list_supported_models
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        prog="context-compressor",
+        prog="llmslim",
         description="Compress text/prompts to reduce LLM token usage by 40-70%.",
     )
     parser.add_argument(

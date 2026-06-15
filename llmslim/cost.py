@@ -79,7 +79,7 @@ def estimate_cost_savings(
         A :class:`CostEstimate` with daily/monthly/annual savings.
 
     Example:
-        >>> from context_compressor import compress, estimate_cost_savings
+        >>> from llmslim import compress, estimate_cost_savings
         >>> result = compress(prompt, target_ratio=0.5)
         >>> cost = estimate_cost_savings(
         ...     result.original_tokens, result.compressed_tokens,

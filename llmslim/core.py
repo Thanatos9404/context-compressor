@@ -108,7 +108,7 @@ class ContextCompressor:
         min_tokens_for_compression: Texts at or below this token count
             are returned unchanged.
         weights: Optional overrides for ranking weights -- see
-            ``context_compressor.ranking.DEFAULT_WEIGHTS``.
+            ``llmslim.ranking.DEFAULT_WEIGHTS``.
         preserve_patterns: Optional list of regex strings; any sentence
             matching one of these is always retained (e.g.
             ``[r"API_KEY", r"^System:"]``).
@@ -345,7 +345,7 @@ def compress(
         ``.reduction_percent``, and other statistics.
 
     Example:
-        >>> from context_compressor import compress
+        >>> from llmslim import compress
         >>> result = compress(my_long_prompt, target_ratio=0.5)
         >>> send_to_llm(result.compressed_text)
         >>> print(f"Saved {result.tokens_saved} tokens ({result.reduction_percent}%)")

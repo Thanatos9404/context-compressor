@@ -1,12 +1,12 @@
-# Contributing to context-compressor
+# Contributing to llmslim
 
 Thanks for your interest in contributing! Here's how to get started.
 
 ## Development Setup
 
 ```bash
-git clone https://github.com/Thanatos9404/context-compressor.git
-cd context-compressor
+git clone https://github.com/Thanatos9404/llmslim.git
+cd llmslim
 pip install -e ".[all,dev]"
 ```
 
@@ -33,7 +33,7 @@ pytest tests/ -v
 
 ## Reporting Bugs
 
-Open an issue at [github.com/Thanatos9404/context-compressor/issues](https://github.com/Thanatos9404/context-compressor/issues) with:
+Open an issue at [github.com/Thanatos9404/llmslim/issues](https://github.com/Thanatos9404/llmslim/issues) with:
 - A minimal code example reproducing the bug.
 - Expected vs. actual behavior.
 - Python version and installed extras.

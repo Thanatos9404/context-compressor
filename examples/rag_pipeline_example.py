@@ -3,16 +3,16 @@
 
 In a typical RAG setup you retrieve N document chunks from a vector DB
 and stuff them into the prompt as context.  Most of that context is only
-tangentially relevant.  context-compressor lets you aggressively compress
+tangentially relevant.  llmslim lets you aggressively compress
 the retrieved chunks while keeping the parts most useful for answering
 the user's specific question.
 
 Usage:
-    pip install "context-compressor[all]"
+    pip install "llmslim[all]"
     python examples/rag_pipeline_example.py
 """
 
-from context_compressor import compress_documents, estimate_cost_savings
+from llmslim import compress_documents, estimate_cost_savings
 
 
 def main():

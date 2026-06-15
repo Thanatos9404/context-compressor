@@ -1,7 +1,7 @@
-"""context-compressor: cut LLM prompt size by 40-70% with one function call.
+"""llmslim: cut LLM prompt size by 40-70% with one function call.
 
 Quickstart:
-    >>> from context_compressor import compress
+    >>> from llmslim import compress
     >>> result = compress(my_long_prompt, target_ratio=0.5)
     >>> print(result.compressed_text)
     >>> print(result.summary())

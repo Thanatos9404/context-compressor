@@ -122,7 +122,7 @@
   <circle cx="24" cy="20" r="6" fill="#ff5f56" />
   <circle cx="44" cy="20" r="6" fill="#ffbd2e" />
   <circle cx="64" cy="20" r="6" fill="#27c93f" />
-  <text x="400" y="25" fill="#8b949e" font-size="12" font-weight="600" text-anchor="middle" letter-spacing="0.5">CONTEXT-COMPRESSOR PIPELINE DEMO</text>
+  <text x="400" y="25" fill="#8b949e" font-size="12" font-weight="600" text-anchor="middle" letter-spacing="0.5">LLMSLIM PIPELINE DEMO</text>
 
   <!-- LEFT PANEL: RAW PROMPT -->
   <g transform="translate(30, 60)">

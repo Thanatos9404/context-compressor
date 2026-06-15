@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Benchmark suite for context-compressor.
+"""Benchmark suite for llmslim.
 
 Measures compression ratio, entity retention, instruction preservation,
 and latency across different text types and target ratios.
 
 Usage:
-    pip install "context-compressor[all]"
+    pip install "llmslim[all]"
     python benchmarks/benchmark.py
 """
 
@@ -15,8 +15,8 @@ import time
 from dataclasses import dataclass
 from typing import List
 
-from context_compressor import compress
-from context_compressor.tokens import count_tokens
+from llmslim import compress
+from llmslim.tokens import count_tokens
 
 
 @dataclass
@@ -220,7 +220,7 @@ def run_benchmark(text_type: str, text: str, target_ratio: float) -> BenchmarkRe
 
 def main():
     print("=" * 80)
-    print("context-compressor BENCHMARK SUITE")
+    print("llmslim BENCHMARK SUITE")
     print("=" * 80)
 
     ratios = [0.3, 0.5, 0.7]
@@ -233,13 +233,13 @@ def main():
 
     # Print results as a markdown table
     print()
-    print("| Text Type | Target | Tokens (orig→comp) | Actual Reduction | Entities Kept | Instructions Kept | Latency |")
+    print("| Text Type | Target | Tokens (orig->comp) | Actual Reduction | Entities Kept | Instructions Kept | Latency |")
     print("|:----------|:------:|:------------------:|:----------------:|:-------------:|:-----------------:|:-------:|")
 
     for r in results:
         print(
             f"| {r.text_type:<24} | {r.target_reduction:>4} "
-            f"| {r.original_tokens:>4}→{r.compressed_tokens:>4} "
+            f"| {r.original_tokens:>4}->{r.compressed_tokens:>4} "
             f"| {r.actual_reduction:>5.1f}% "
             f"| {r.entities_kept}/{r.entities_total} ({r.entity_retention:.0f}%) "
             f"| {r.instructions_kept}/{r.instructions_total} ({r.instruction_retention:.0f}%) "
@@ -263,7 +263,7 @@ def main():
         avg_reduction_50 = sum(r.actual_reduction for r in ratio_50) / len(ratio_50)
         print(f"At 50% target: average actual reduction = {avg_reduction_50:.1f}%")
 
-    print("\n✅ Benchmark complete!")
+    print("\n[OK] Benchmark complete!")
 
 
 if __name__ == "__main__":

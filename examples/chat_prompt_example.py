@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 """Example: Compressing chat conversation histories before sending to an LLM.
 
-context-compressor can shrink long chat histories so you stay within
+llmslim can shrink long chat histories so you stay within
 context windows and cut API costs — without losing the meaning of
 earlier turns.
 
 Usage:
-    pip install "context-compressor[all]"
+    pip install "llmslim[all]"
     python examples/chat_prompt_example.py
 """
 
-from context_compressor import compress_chat_messages, estimate_cost_savings, count_tokens
+from llmslim import compress_chat_messages, estimate_cost_savings, count_tokens
 
 
 def main():

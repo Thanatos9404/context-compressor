@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Interactive demo script for context-compressor.
+"""Interactive demo script for llmslim.
 
 This script walks through all major features of the library.
 Run it directly or convert it to a Jupyter notebook with jupytext:
@@ -7,16 +7,16 @@ Run it directly or convert it to a Jupyter notebook with jupytext:
     jupytext --to notebook notebooks/demo.py
 
 Usage:
-    pip install "context-compressor[all]"
+    pip install "llmslim[all]"
     python notebooks/demo.py
 """
 
 # %% [markdown]
-# # 🚀 context-compressor Demo
+# # 🚀 llmslim Demo
 #
 # **Cut your LLM costs by 50% in one line of code.**
 #
-# This demo walks through the main features of `context-compressor`:
+# This demo walks through the main features of `llmslim`:
 # 1. Basic compression
 # 2. Inspecting compression results
 # 3. RAG-style query-aware compression
@@ -28,7 +28,7 @@ Usage:
 # ## 1. Basic Compression
 
 # %%
-from context_compressor import compress
+from llmslim import compress
 
 # A sample long prompt
 prompt = """
@@ -111,7 +111,7 @@ documents = [
     "generates OpenAPI documentation at the /docs endpoint.",
 ]
 
-from context_compressor import compress_documents
+from llmslim import compress_documents
 
 # Without query — general compression
 results_general = compress_documents(documents, target_ratio=0.5)
@@ -137,7 +137,7 @@ for i, r in enumerate(results_query):
 # ## 4. Chat History Compression
 
 # %%
-from context_compressor import compress_chat_messages
+from llmslim import compress_chat_messages
 
 messages = [
     {"role": "system", "content": "You are a helpful coding assistant. You must provide working code."},
@@ -159,7 +159,7 @@ messages = [
 compressed_msgs = compress_chat_messages(messages, target_ratio=0.5)
 
 print("=== Chat Compression ===")
-from context_compressor import count_tokens
+from llmslim import count_tokens
 for orig, comp in zip(messages, compressed_msgs):
     orig_tokens = count_tokens(orig["content"])
     comp_tokens = count_tokens(comp["content"])
@@ -170,7 +170,7 @@ for orig, comp in zip(messages, compressed_msgs):
 # ## 5. Cost Savings Estimation
 
 # %%
-from context_compressor import estimate_cost_savings, list_supported_models
+from llmslim import estimate_cost_savings, list_supported_models
 
 print(f"Supported models: {', '.join(list_supported_models())}\n")
 
@@ -191,7 +191,7 @@ for model in ["gpt-5", "claude-sonnet-4.6", "gemini-2.5-pro"]:
 # ## 6. Advanced Configuration
 
 # %%
-from context_compressor import ContextCompressor
+from llmslim import ContextCompressor
 
 # Custom compressor with tuned parameters
 compressor = ContextCompressor(
@@ -234,4 +234,4 @@ if "PCI DSS" in result.compressed_text:
 # For the full API reference, see the [README](../README.md).
 
 # %%
-print("\n*** Demo complete! Star us on GitHub: https://github.com/Thanatos9404/context-compressor")
+print("\n*** Demo complete! Star us on GitHub: https://github.com/Thanatos9404/llmslim")

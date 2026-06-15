@@ -1,6 +1,6 @@
 """Pluggable embedding backends used for semantic chunking and ranking.
 
-``context-compressor`` works fully offline out of the box via a TF-IDF
+``llmslim`` works fully offline out of the box via a TF-IDF
 backend (no model downloads required). If ``sentence-transformers`` is
 installed and a model can be downloaded, it is used automatically for
 higher-quality semantic embeddings.
@@ -104,9 +104,9 @@ def get_default_backend() -> EmbeddingBackend:
     except Exception:
         warnings.warn(
             "sentence-transformers is not installed (or its model could not "
-            "be downloaded), so context-compressor is using a TF-IDF "
+            "be downloaded), so llmslim is using a TF-IDF "
             "embedding fallback. For higher-quality semantic compression, "
-            "install the 'semantic' extra: pip install 'context-compressor[semantic]'",
+            "install the 'semantic' extra: pip install 'llmslim[semantic]'",
             stacklevel=2,
         )
         backend = TfidfEmbeddingBackend()
